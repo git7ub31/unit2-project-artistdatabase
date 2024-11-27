@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Portfolios</title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+
+    <a href="/">Home</a> 
+    <a href="/portfolios/new">Create a New Profile</a>
+    <br>
+
+    <h1>Here's all the Portfolios</h1>
+    <ul> 
+        <% portfolios.forEach((portfolio) => { %>
+          <li>
+           <%= portfolio.artistName %> <%= portfolio.biography %> by <%= portfolio.owner.username %>
+          <a href="/portfolios/<%= portfolio._id %>">View more details</a>
+          </li>
+        <% }) %>
+    </ul>
+  </body>
+</html>

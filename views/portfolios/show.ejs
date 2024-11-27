@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= portfolio.owner.username %>'s profile</title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+
+    <!-- <h3>Owner</h3> -->
+    <% if (portfolio.owner._id.equals(user._id)) { %>
+      <p>My Profile</p>
+      <a href="/portfolios/<%= portfolio._id%>/edit">Edit This Portfolio</a>
+      <form action="/portfolios/<%= portfolio._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete this portfolio</button>
+      </form>
+    <% } else { %>
+      <p>Connecting with artists around you</p>
+    <% } %>
+
+    <h1><%= portfolio.artistName%></h1>
+    <h2>About the artist: <%= portfolio.biography %></h2>
+
+    <h2>Explore their craft</h2>
+    <p>Links to their work: <%= portfolio.link %></p>
+    <p>Media:</p>
+    <br>
+
+    <label>Leave a comment/review for the artist! If you've worked with them, share your experience:</label>
+    <textarea></textarea>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add or Update your Profile</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Start Creating:</h1>
+
+    <form action="/portfolios" method="POST">
+    <label for="artist-name">Name of Artist:</label>
+    <input type="text" name="artistName" id="artist-name" />
+    <br>
+    <br>
+
+    <label for="biography">Biography:</label>
+    <!-- <input type="text" name="biography" id="biography" /> -->
+    <textarea name="biography" id="biography"></textarea>
+    <br>
+    <br>
+
+    <label for="portfolio">Portfolio:</label>
+    <input type="text" name="portfolio" id="portfolio" />
+    <!-- <input type="file" name="portfolio" id="portfolio" /> -->
+    <label for="link"> (links, media etc.):</label>
+    <input type="url" name="link" id="link" />
+    <br>
+    <br>
+
+    <button type="submit">Submit Profile</button>
+  </form>
+  
+</body>
+</html>
