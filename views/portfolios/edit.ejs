@@ -3,10 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styleedit.css">
+
     <title>Edit <%= portfolio.name %></title>
   </head>
   <body>
+    <div id="login">
     <%- include('../partials/_navbar.ejs') %>
+    </div>
 
     <h1>Edit your Portfolio</h1>
 
@@ -17,14 +21,12 @@
     <br>
 
     <label for="biography">Biography:</label>
-    <!-- <input type="text" name="biography" id="biography" /> -->
     <textarea type="" name="biography" id="biography" value="<%= portfolio.biography %>"></textarea>
     <br>
     <br>
 
     <label for="portfolio">Portfolio:</label>
     <input type="text" name="portfolio" id="portfolio" />
-    <!-- <input type="file" name="portfolio" id="portfolio" /> -->
     <label for="link"> (links, media etc.):</label>
     <input type="url" name="link" id="link" value="<%= portfolio.link %>"/>
     <br>

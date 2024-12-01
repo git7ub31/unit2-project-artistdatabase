@@ -3,42 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styleshow.css">
+
     <title><%= portfolio.owner.username %>'s profile</title>
   </head>
   <body>
+    <div id="login">
     <%- include('../partials/_navbar.ejs') %>
 
     <% if (portfolio.owner._id.equals(user._id)) { %>
       <p>My Profile</p>
-      <a href="/portfolios/<%= portfolio._id%>/edit">Edit This Portfolio</a>
-      <form action="/portfolios/<%= portfolio._id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete this portfolio</button>
-      </form>
+      <div class="profile-actions">
+        <a href="/portfolios/<%= portfolio._id %>/edit" class="action-btn">Edit Profile</a>
+        <form action="/portfolios/<%= portfolio._id %>?_method=DELETE" method="POST">
+          <button type="submit" class="action-btn">Delete Profile</button>
+        </form>
+      </div>
+  </div>
+
     <% } else { %>
       <p>Connecting with artists around you</p>
     <% } %>
 
     <h1><%= portfolio.artistName%></h1>
-    <h2>About the artist: <%= portfolio.biography %></h2>
-
-    <h2>Explore their craft</h2>
-    <p>Links to their work: <%= portfolio.link %></p>
-    <p>Media:</p>
+    <br>
     <br>
 
-    <!-- <label>Leave a comment/review for the artist! If you've worked with them, share your experience:</label>
-    <textarea></textarea> -->
+    <h2>About the artist: <%= portfolio.biography %></h2>
+    <br>
+    <br>
 
-    <!-- <h2>Likes</h2>
-<p>Liked by <%= portfolio.likedByUsers.length %> people.</p>
-<form
-  action="/portfolios/<%= portfolio._id %>/liked-by/<%= user._id %>"
-  method="POST"
->
-  <button type="submit">Like it!</button>
-</form> -->
+    <h2>Explore their craft</h2>
+    <!-- <p>Description: <%= portfolio.portfolio %></p> -->
+    <p>Links to their work: <a href="<%= portfolio.link %>" target="_blank"><%= portfolio.link %></a></p>
+    <br>
 
-<h2>Likes</h2>
+    <hr class="separator">
+
+    <h2>Likes</h2>
+    
+    <div class="likes-container">
+      <p>Liked by <%= portfolio.likedByUsers.length %> people.</p>
+    
+      <% if (userHasLiked) { %>
+        <p>You've liked this profile!</p>
+        <form action="/portfolios/<%= portfolio._id %>/liked-by/<%= user._id %>?_method=DELETE" method="POST">
+          <button type="submit">Unlike it!</button>
+        </form>
+      <% } else { %>
+        <form action="/portfolios/<%= portfolio._id %>/liked-by/<%= user._id %>" method="POST">
+          <button type="submit">Like it!</button>
+        </form>
+      <% } %>
+    </div>
+    
+    <hr class="separator">
+    
+    <!-- Comment Section -->
+    <h3>Leave a comment/review for the artist! If you've worked with them, share your experience:</h3>
+    <form action="/portfolios/<%= portfolio._id %>/comments" method="POST">
+      <textarea name="content" required></textarea>
+      <button type="submit">Submit Comment</button>
+    </form>
+    <br>
+
+<!-- <h2>Likes</h2>
 
 <p>Liked by <%= portfolio.likedByUsers.length %> people.</p>
 
@@ -59,12 +88,15 @@
 >
   <button type="submit">Like it!</button>
 </form>
+<br>
+<br>
 
 <h3>Leave a comment/review for the artist! If you've worked with them, share your experience:</h3>
 <form action="/portfolios/<%= portfolio._id %>/comments" method="POST">
   <textarea name="content" required></textarea>
   <button type="submit">Submit Comment</button>
 </form>
+<br> -->
 
 <h3>Comments:</h3>
 <ul>
@@ -78,3 +110,4 @@
 <% } %>
   </body>
 </html>
+

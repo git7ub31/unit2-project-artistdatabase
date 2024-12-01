@@ -3,26 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Home Page</title>
 </head>
 <body>
-    <h1>Welcome to the Artistry Portal!</h1>
-    <% if (user) { %>
-        <h1>Welcome to the app, <%= user.username %>!</h1>
-        <p>
-          <a href="/portfolios/new">Start Building Your Artist Profile</a>
-            <a href="/auth/sign-out">Sign Out</a>
-          </p>
-        <% } else { %>
-        <h2>You are currently a guest. Sign Up or Sign In to start creating</h2>
-        <p>
-          <a href="/auth/sign-up">Sign up</a> or <a href="/auth/sign-in">sign in</a>.
-        </p>
-        <% } %>
-        <p>
-        <br>
 
-        <a href="/portfolios">Explore the Portal</a>
-        </p>
-        </body>
+  <div class="grid-container">
+    <div id="welcome">
+        <% if (user) { %>
+            <h3>Hello, <%= user.username %></h3>
+            <nav>
+                <a href="/portfolios/new">Build Your Artist Profile</a>
+                <a href="/auth/sign-out">Sign Out</a>
+            </nav>
+        <% } else { %>
+            <h2>You are currently a guest.</h2>
+            <nav>
+                <a href="/auth/sign-up">Sign up</a> or <a href="/auth/sign-in">sign in</a>.
+            </nav>
+        <% } %>
+        <h1>Welcome to the Artistry Portal</h1>
+        <nav>
+            <a href="/portfolios" id="explore">Explore the Portal</a>
+        </nav>
+    </div>
+  </div>
+</body>
 </html>

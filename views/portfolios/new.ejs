@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/stylenew.css">
     <title>Add or Update your Profile</title>
 </head>
 <body>
+  <div id="login">
     <%- include('../partials/_navbar.ejs') %>
+  </div>
     <h1>Start Creating:</h1>
 
     <form action="/portfolios" method="POST">
@@ -23,9 +26,8 @@
 
     <label for="portfolio">Portfolio:</label>
     <input type="text" name="portfolio" id="portfolio" />
-    <!-- <input type="file" name="portfolio" id="portfolio" /> -->
     <label for="link"> (links, media etc.):</label>
-    <input type="url" name="link" id="link" />
+    <input type="url" name="link" id="link"/>
     <br>
     <br>
 

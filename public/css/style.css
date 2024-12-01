@@ -1,0 +1,75 @@
+/* landing page index */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    background-image: url('../media/2.gif');  
+    background-size: cover; 
+    background-position: center center;  
+    background-repeat: no-repeat;  
+    font-family: Arial, sans-serif; 
+}
+
+/* Grid container for centering the content */
+.grid-container {
+    display: grid;
+    place-items: center; 
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+}
+
+/* Styling for the #welcome section */
+#welcome {
+    max-width: 600px; 
+    color: whitesmoke;
+}
+
+/* Styling for h1, h2, h3 and p tags */
+h1, h2, h3 {
+    margin: 10px 0;
+    margin-bottom: 50px;
+}
+
+h1 {
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+p {
+    margin: 10px 0;
+}
+
+/* Styling for the links in the nav bar */
+nav a {
+    color: white;
+    text-decoration: underline;
+    padding: 10px;
+    transition: background-color 0.3s, padding 0.3s;
+}
+
+/* Hover effect for the links */
+nav a:hover {
+    background-color: #575757;  
+    border-radius: 5px;
+    padding: 10px 15px;  
+}
+
+/* Optional: Focus outline for accessibility */
+nav a:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #fff;  
+}
+
+#explore {
+    display: inline-block; 
+    margin-top: 10px;
+    font-weight: bold;
+}
