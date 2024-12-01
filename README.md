@@ -8,7 +8,7 @@ The Artist Database is a portfolio platform that allows artists to create, showc
 - Database: MongoDB
 - Authentication: User sessions for login and management
 - Styling: Custom CSS, W3Schools, Bootstrap for responsive design
-- **still in the works** File Uploads: Multer for image upload (portfolio images)
+- _**still in the works**_ File Uploads: Multer for image upload (portfolio images)
 
 ## Fork this repository
 1. Clone the forked repository
