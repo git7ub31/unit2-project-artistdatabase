@@ -10,6 +10,10 @@ The Artist Database is a portfolio platform that allows artists to create, showc
 - Styling: Custom CSS, W3Schools, Bootstrap for responsive design
 - _**still in the works**_ File Uploads: Multer for image upload (portfolio images)
 
+## Upcoming Improvements & Additions
+- The site will enable artists to have more control and varitey as to what they can upload and share. 
+- It will also contain a "contact me" section where they can fill in a form with their requests or send a direct email. 
+
 ## Fork this repository
 1. Clone the forked repository
 2. Add your contributions (code or documentation)
