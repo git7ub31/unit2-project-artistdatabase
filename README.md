@@ -7,7 +7,7 @@ The Artist Portfolio Database is a platform that allows artists to create, showc
 - Frontend: EJS, HTML, CSS
 - Database: MongoDB
 - Authentication: User sessions for login and management
-- Styling: Custom CSS, Bootstrap for responsive design
+- Styling: Custom CSS, W3Schools, Bootstrap for responsive design
 - **still in the works** File Uploads: Multer for image upload (portfolio images)
 
 ## Fork this repository
@@ -15,9 +15,3 @@ The Artist Portfolio Database is a platform that allows artists to create, showc
 2. Add your contributions (code or documentation)
 3. Commit and push
 4. Wait for pull request to be merged
-
-## Acknowledgements
-**this is currently in the works** Multer: For handling file uploads (images for artist portfolios).
-EJS: For rendering dynamic HTML views.
-W3Schools & Bootstrap: For responsive design and user interface components.
-
